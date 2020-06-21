@@ -1,0 +1,29 @@
+@import "../../config"
+    
+.catalog
+    background-color: $secondary-color
+    .catalogContent
+        max-width: $max-content-width
+        margin: 0 auto
+        padding: $default-gap
+        margin-top: calc(#{$header-height})
+        min-height: calc(100vh - #{$header-height})
+        display: grid
+        grid-gap: 30px
+        grid-template-columns: repeat(3, 1fr)
+        .loadMoreBtn
+            grid-column-start: 1
+            grid-column-end: 4
+            width: 100%
+            padding: $default-gap
+            text-align: center
+            background-color: $secondary-color
+            color: $text-color
+            border: none
+            font-family: OpenSans
+            font-size: 20px
+            transition: .4s
+            &:hover
+                background-color: $primary-color
+
+@import "./media.module"
