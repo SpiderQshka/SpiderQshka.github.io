@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./main.module.sass";
+import errorImg from "../../static/icons/warning.png";
 
 export interface ICard {
   url?: string;
@@ -13,8 +14,8 @@ export interface ICard {
 export const Card: React.FunctionComponent<ICard> = (props) => {
   return (
     <div
-      className={styles.card}
-      style={{ backgroundImage: `url(${props.url})` }}
+      className={`${styles.card} ${props.error && styles.cardError}`}
+      style={{ backgroundImage: `url(${props.url ? props.url : errorImg})` }}
       onClick={() => {
         if (!props.error) {
           props.setIsGalleryOpen(false);
